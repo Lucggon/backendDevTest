@@ -1,12 +1,13 @@
 /app-products/target/
-/app-products/app-products.iml
-build/
-.idea
-gradle-app.setting
 
+build/
+
+gradle-app.setting
+*.iml
 
 /var/log/*
 !/var/log/.gitkeep
 
 .env.local
 .env.*.local
+/.idea/
