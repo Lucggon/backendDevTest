@@ -6,18 +6,17 @@
         <artifactId>backendDevTest</artifactId>
         <groupId>org.backendDevTest</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>app-products</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.backendDevTest</groupId>
             <artifactId>shared</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.backendDevTest</groupId>
@@ -26,27 +25,44 @@
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+            <version>2.7.3</version>
+        </dependency>
     </dependencies>
-    <build>
-        <sourceDirectory>main</sourceDirectory>
-        <testSourceDirectory>test</testSourceDirectory>
-        <resources>
-            <resource>
-                <directory>main/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </resource>
-        </resources>
-        <testResources>
-            <testResource>
-                <directory>test/resources</directory>
-                <includes>
-                    <include>**/*</include>
-                </includes>
-            </testResource>
 
-        </testResources>
-    </build>
+        <build>
+            <sourceDirectory>main</sourceDirectory>
+            <testSourceDirectory>test</testSourceDirectory>
+            <resources>
+                <resource>
+                    <directory>main/resources</directory>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                </resource>
+            </resources>
+            <testResources>
+                <testResource>
+                    <directory>test/resources</directory>
+                    <includes>
+                        <include>**/*</include>
+                    </includes>
+                </testResource>
+            </testResources>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.7.3</version>
+                    <configuration>
+                        <outputDirectory>../target/app-products</outputDirectory>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+
+
 
 </project>

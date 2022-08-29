@@ -1,5 +1,4 @@
-/app-products/target/
+
 *.iml
 /.idea/
-/app-products/products/target/
-/app-products/shared/target/
+target

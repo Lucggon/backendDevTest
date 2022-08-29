@@ -1,7 +1,7 @@
 package org.backendDevTest.app.infraestructure.persistence;
 
 import org.backendDevTest.Starter;
-import org.backendDevTest.app.infraestructure.InfraestructureTestCase;
+import org.backendDevTest.shared.infraestructure.InfraestructureTestCase;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 

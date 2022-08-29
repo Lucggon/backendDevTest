@@ -31,3 +31,34 @@ The following topics will be considered:
 - Code clarity and maintainability
 - Performance
 - Resilience
+
+## Implementation of feature
+For the implementation of this feature. Taking into consideration 
+that the real application have benn complex. I select a Hexagonal 
+architecture, using a approach Outside-in, start build the application
+for the controllers. 
+
+The folder structure is separate in features: 
+- products ->  where i put the infraestructure, use cases and models.
+  - Infraestructure ->  all logic that work with the external world.
+  - domain -> the core of feature, follow the approach dont ask, tell me. 
+  - applicattion -> i put in this folder the logic
+  - shared -> in this folder i put class that is used in the three layers.
+- shared -> I have select create this folder, with the idea that the application
+is complex. In this folder i put the class that can be used by others modules.
+
+## For run
+
+1. Execute the script in bash
+```
+    sh init.sh
+```
+- it delete target folder it's exist, run ./mvnw install and build and 
+run Docker image.
+
+2. Execute maven install, run and build Docker image
+```
+./mvnw install
+docker build -t "app-products" .
+docker run --rm  -p 5000:5000 app-products
+```
