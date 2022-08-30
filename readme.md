@@ -62,3 +62,13 @@ run Docker image with docker-compose.
 docker build -t "app-products" .
 docker-compose up -d appproducts
 ```
+
+3. Execute maven install and spring-boot maven plugin:
+```
+sh init_pre.sh 
+
+or
+
+./mvnw install -Ppre
+./mvnw -pl org.backendDevTest:app-products spring-boot:run
+```

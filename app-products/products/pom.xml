@@ -10,7 +10,6 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>app-products</artifactId>
-
     <profiles>
         <profile>
             <id>pre</id>
@@ -26,7 +25,7 @@
         <profile>
             <id>pro</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <spring.profiles.active>pro</spring.profiles.active>
@@ -85,9 +84,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.7.3</version>
+
                 <configuration>
+                    <skip>false</skip>
+                    <fork>true</fork>
                     <outputDirectory>../target/app-products</outputDirectory>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
 
             </plugin>
         </plugins>

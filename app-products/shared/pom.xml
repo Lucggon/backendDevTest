@@ -16,19 +16,54 @@
 
     <artifactId>shared</artifactId>
 
-
+    <profiles>
+        <profile>
+            <id>pre</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>pre</spring.profiles.active>
+                <url.product>http://localhost:3001/</url.product>
+                <environment>pre</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>pro</spring.profiles.active>
+                <spring.profiles.active>pro</spring.profiles.active>
+                <url.product>http://product-mock/</url.product>
+                <environment>pro</environment>
+            </properties>
+        </profile>
+    </profiles>
     <build>
         <sourceDirectory>main</sourceDirectory>
         <testSourceDirectory>test</testSourceDirectory>
+
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.7.3</version>
 
-                        <configuration>
-                            <classifier>exec</classifier>
-                        </configuration>
+                <configuration>
+
+
+                    <classifier>exec</classifier>
+
+                        <skip>false</skip>
+                        <fork>true</fork>
+
+                    <outputDirectory>../target/app-products</outputDirectory>
+
+                </configuration>
+
 
             </plugin>
             <plugin>

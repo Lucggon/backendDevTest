@@ -13,5 +13,7 @@ echo "clean docker-compose"
 docker-compose stop appproducts
 docker-compose rm -f appproducts
 docker-comppose pull appproducts
-docker-compose up -d appproducts
+
+echo "start docker-compose images"
+docker-compose up -d simulado influxdb grafana appproducts
 echo "Spring app expose in :5000"
