@@ -2,7 +2,6 @@ package org.backendDevTest.app.infraestructure.http;
 
 import org.backendDevTest.app.application.find.ProductDTO;
 import org.backendDevTest.app.application.find.ProductFind;
-import org.backendDevTest.app.infraestructure.persistence.HttpProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

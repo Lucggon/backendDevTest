@@ -1,11 +1,7 @@
 package org.backendDevTest.app.application.find;
 
 import org.backendDevTest.app.domain.ProductId;
-import org.backendDevTest.app.domain.Product;
 import org.backendDevTest.app.domain.ProductRepository;
-import org.backendDevTest.app.infraestructure.persistence.HttpProductRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
