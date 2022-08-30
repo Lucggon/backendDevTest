@@ -35,10 +35,7 @@
             </properties>
         </profile>
     </profiles>
-
-
     <dependencies>
-
         <dependency>
             <groupId>org.backendDevTest</groupId>
             <artifactId>shared</artifactId>
@@ -97,10 +94,7 @@
                         </goals>
                     </execution>
                 </executions>
-
             </plugin>
         </plugins>
     </build>
-
-
 </project>

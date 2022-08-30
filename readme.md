@@ -33,19 +33,19 @@ The following topics will be considered:
 - Resilience
 
 ## Implementation of feature
-For the implementation of this feature. Taking into consideration 
-that the real application have benn complex. I select a Hexagonal 
-architecture, using a approach Outside-in, start build the application
+For the implementation of this feature, considerating
+that the real application would be complex, I select a Hexagonal 
+architecture, using an approach Outside-in, starting to build the application
 for the controllers. 
 
-The folder structure is separate in features: 
-- products ->  where i put the infraestructure, use cases and models.
-  - Infraestructure ->  all logic that work with the external world.
-  - domain -> the core of feature, follow the approach dont ask, tell me. 
-  - applicattion -> i put in this folder the logic
-  - shared -> in this folder i put class that is used in the three layers.
-- shared -> I have select create this folder, with the idea that the application
-is complex. In this folder i put the class that can be used by others modules.
+The folder structure is divided in features: 
+- products ->  where I put the infrastructure, use cases and models.
+  - Infrastructure ->  all logic that work with the external world.
+  - domain -> the core of feature, following the approach "doesn't ask, tell me". 
+  - applicattion -> I have put in this folder the business logic.
+  - shared -> in this folder I put classes that are used in the three layers.
+- shared -> I have created this folder with the idea that the real application
+would be complex, so in this folder I have put the classes that can be used by others modules.
 
 ## For run
 
@@ -53,8 +53,8 @@ is complex. In this folder i put the class that can be used by others modules.
 ```
     sh init.sh
 ```
-- it delete target folder it's exist, run ./mvnw install and build and 
-run Docker image with docker-compose.
+- It deletes target folder if it's exist, then run ./mvnw install and build, 
+after this, it runs Docker image with docker-compose.
 
 2. Execute maven install, run and build Docker image
 ```
