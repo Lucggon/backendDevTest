@@ -28,15 +28,7 @@ class ProductFindTest {
 
     }
 
-    @Test
-    public void should_call_repository(){
-        String id = "1";
-        ProductFind productFind = new ProductFind(this.productRepositoryMock);
-        Mockito.when(productRepositoryMock.findOne(new ProductId(id))).thenReturn(ProductExamples.create(id));
-        productFind.find(id);
-        Mockito.verify(productRepositoryMock, atLeastOnce()).findOne(new ProductId(id));
 
-    }
 
     @Test
     public void should_return_list_similar_product_from_id(){

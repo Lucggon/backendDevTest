@@ -54,11 +54,11 @@ is complex. In this folder i put the class that can be used by others modules.
     sh init.sh
 ```
 - it delete target folder it's exist, run ./mvnw install and build and 
-run Docker image.
+run Docker image with docker-compose.
 
 2. Execute maven install, run and build Docker image
 ```
-./mvnw install
+./mvnw install -Ppro
 docker build -t "app-products" .
-docker run --rm  -p 5000:5000 app-products
+docker-compose up -d appproducts
 ```

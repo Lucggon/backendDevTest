@@ -23,6 +23,16 @@ services:
     volumes:
       - ./shared/simulado:/app
     command: ./bin/simulado -f /app/mocks.json
+    hostname: "product-mock"
+  appproducts:
+    image: app-products:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - "5000:5000"
+    depends_on:
+        - simulado
   k6:
     image: loadimpact/k6:0.28.0
     ports:

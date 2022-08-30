@@ -10,6 +10,34 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>app-products</artifactId>
+
+    <profiles>
+        <profile>
+            <id>pre</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>pre</spring.profiles.active>
+                <url.product>http://localhost:3001/</url.product>
+                <environment>pre</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>pro</spring.profiles.active>
+                <spring.profiles.active>pro</spring.profiles.active>
+                <url.product>http://product-mock/</url.product>
+                <environment>pro</environment>
+            </properties>
+        </profile>
+    </profiles>
+
+
     <dependencies>
 
         <dependency>
@@ -32,37 +60,38 @@
         </dependency>
     </dependencies>
 
-        <build>
-            <sourceDirectory>main</sourceDirectory>
-            <testSourceDirectory>test</testSourceDirectory>
-            <resources>
-                <resource>
-                    <directory>main/resources</directory>
-                    <includes>
-                        <include>**/*</include>
-                    </includes>
-                </resource>
-            </resources>
-            <testResources>
-                <testResource>
-                    <directory>test/resources</directory>
-                    <includes>
-                        <include>**/*</include>
-                    </includes>
-                </testResource>
-            </testResources>
-            <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>2.7.3</version>
-                    <configuration>
-                        <outputDirectory>../target/app-products</outputDirectory>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </build>
+    <build>
+        <sourceDirectory>main</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>test/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.7.3</version>
+                <configuration>
+                    <outputDirectory>../target/app-products</outputDirectory>
+                </configuration>
 
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

@@ -6,9 +6,12 @@ then
     rm -r "./app-products/target/"
 fi
 echo "building target"
-./mvnw install
+./mvnw install -Ppro
 echo "build docker"
 docker build -t "app-products" .
-echo "docker run"
-docker run --rm  -p 5000:5000 app-products
+echo "clean docker-compose"
+docker-compose stop appproducts
+docker-compose rm -f appproducts
+docker-comppose pull appproducts
+docker-compose up -d appproducts
 echo "Spring app expose in :5000"
